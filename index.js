@@ -1,2 +1,10 @@
+import {
+    listDevices,
+    recordAudio,
+} from './src'
+
 console.clear()
-require('./src')
+console.log('\nPODWARE AUDIO')
+
+// listDevices()
+recordAudio(0)
