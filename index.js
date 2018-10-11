@@ -6,5 +6,15 @@ import {
 console.clear()
 console.log('\nPODWARE AUDIO')
 
-// listDevices()
-recordAudio(0)
+if(process.argv[2].toLowerCase() === 'list') {
+    listDevices()
+}
+else if(process.argv[2] == undefined) {
+    recordAudio(0)
+}
+else {
+    const devices = process.argv[2].split(',')
+    devices.forEach(device => {
+        recordAudio(device)
+    })
+}

@@ -1,2 +1,2 @@
 export const audioExt = '.mp3'
-export const audioFile = 'recordings/audioDevice_'
+export const audioRecDir = 'recordings/'
