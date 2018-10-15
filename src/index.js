@@ -15,7 +15,9 @@ export const listDevices = () => {
 
 export const recordAudio = (index) => {
     const newFile = audioRecDir + Date.now() + '_' + index + audioExt
-    exec('ffmpeg -f avfoundation -i ":' + index + '" ' + newFile, (err, stdout, stdin) => {
+    exec('ffmpeg -f avfoundation -i ":' + index + '" ' + newFile, {
+        maxBuffer: 10000000, // 10mB should work? default is 200kB
+    }, (err, stdout, stdin) => {
         if(err) {
             console.log('error recording audio ' + index)
             console.log(err)
